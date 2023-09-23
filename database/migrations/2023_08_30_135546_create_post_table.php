@@ -15,6 +15,10 @@ class CreatePostTable extends Migration
     {
         Schema::create('post', function (Blueprint $table) {
             $table->id();
+            $table->foreign('user_id')->references('id')->on('user');
+            $table->string('name');
+            $table->string('content');
+            $table->string('image');
             $table->timestamps();
         });
     }

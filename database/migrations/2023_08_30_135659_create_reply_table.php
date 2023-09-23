@@ -15,6 +15,9 @@ class CreateReplyTable extends Migration
     {
         Schema::create('reply', function (Blueprint $table) {
             $table->id();
+            $table->foreign('user_id')->references('id')->on('user');
+            $table->foreign('comment_id')->references('id')->on('comment');
+            $table->string('content');
             $table->timestamps();
         });
     }
