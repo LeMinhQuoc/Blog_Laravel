@@ -15,7 +15,9 @@ class CreatePostUserTable extends Migration
     {
         Schema::create('post_user', function (Blueprint $table) {
             $table->id();
-            $table->foreign('user_id')->references('id')->on('user');
+            $table->interger('user_id');
+            $table->interger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('post_id')->references('id')->on('post');
             $table->timestamps();
         });
